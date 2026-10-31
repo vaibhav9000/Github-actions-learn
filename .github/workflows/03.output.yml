@@ -1,4 +1,6 @@
-name: Output information
+# there are many output variables available in github actions, this workflow is to output the github context
+# examples: env, job, jobs steps, runner, secrets, strategy, github, matrix etc.
+name: Output information 
 on: workflow_dispatch
 jobs:
     info:

@@ -1,0 +1,21 @@
+name: Event activity and filters
+on: 
+    workflow_dispatch:
+    push:
+        branches: 
+            - main
+            - master
+            - 'release/**'
+        paths-ignore:
+            - '/ignore'
+    pull_request: 
+        types:
+            - opened
+        branches-ignore:
+            - ignore/**
+jobs:
+    execution:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Workflow executed
+              run: echo "Workflow executed"

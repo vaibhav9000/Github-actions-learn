@@ -1,5 +1,6 @@
 name: Deploy Project
-on: [push, workflow_dispatch, pull_request]
+# on: [push, workflow_dispatch, pull_request]
+on: workflow_dispatch
 jobs:
     test:
         runs-on: ubuntu-latest
@@ -18,7 +19,7 @@ jobs:
               run: npm run test
     
     deploy:
-        needs: test
+        needs: test # can also be accepted as a list of jobs, it is used to define the dependency between jobs
         runs-on: ubuntu-latest
         steps: 
             - name: Get code
