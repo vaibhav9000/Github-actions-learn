@@ -11,9 +11,11 @@ jobs:
               with: # providing configuration to action
                 node-version: 26
             - name: Install dependencies
-              run:  cd frontend & npm ci
+              working-directory: frontend
+              run: npm ci
             - name: Run tests
-              run: cd frontend & npm run test
+              working-directory: frontend
+              run: npm run test
     
     deploy:
         needs: test
@@ -26,8 +28,10 @@ jobs:
               with:
                 node-version: 26
             - name: Install dependencies
-              run: cd frontend & npm ci
+              working-directory: frontend
+              run: npm ci
             - name: Build project
-              run: cd frontend & npm run build
+              working-directory: frontend
+              run: npm run build
             - name: Deploy
               run: echo "Deploying ..."
