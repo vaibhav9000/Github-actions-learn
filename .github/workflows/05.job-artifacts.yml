@@ -18,6 +18,6 @@ jobs:
               with:
                 name: dist-files
                 path: |
-                    dist
-                    package.json
-                    package-lock.json
+                    frontend/dist
+                    frontend/package.json
+                    frontend/package-lock.json
